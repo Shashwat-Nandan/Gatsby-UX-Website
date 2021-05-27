@@ -1,6 +1,6 @@
 .container {
   margin: auto;
-  max-width: 500px;
+  max-width: 1000px;
   font-family: sans-serif;
 }
 
@@ -10,11 +10,23 @@
 .nav-links {
   display: flex;
   list-style: none;
-  padding-left: 0;
+  padding-left: 1.25rem;
+  transition: transform 0.5s;
+  background-color: turquoise;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.nav-links :hover {
+  /* background-color: yellow; */
+  transform: scale(1.5);
 }
 .nav-link-item {
   padding-right: 2rem;
 }
 .nav-link-text {
-  color: black;
+  color: white;
+}
+
+.footer {
+  position: absolute;
 }
