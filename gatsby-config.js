@@ -1,7 +1,10 @@
+const siteMetadata = {
+  title: `Shashwat Nandan`,
+  description: `This is my coding blog`,
+};
+
 module.exports = {
-  siteMetadata: {
-    title: "Shashwat-UX",
-  },
+  siteMetadata,
   plugins: [
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",

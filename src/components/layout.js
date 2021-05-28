@@ -1,5 +1,7 @@
-import * as React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import { Link } from "gatsby";
+
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 import {
   container,
@@ -11,19 +13,11 @@ import {
 } from "./layout.module.css";
 
 const Layout = ({ pageTitle, children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetaData {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
+  const { title, description } = useSiteMetadata();
   return (
     <main className={container}>
       <title>{pageTitle}</title>
-      {/* <h1>{data.site.siteMetaData.title}</h1> */}
+      <h1>{title}</h1>
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
