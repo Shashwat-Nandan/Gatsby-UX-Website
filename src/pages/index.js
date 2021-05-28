@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 
 function IndexPage() {
   return (
-    <Layout pageTitle="Home Page">
+    <Layout>
       <p>This is the home page</p>
     </Layout>
   );
