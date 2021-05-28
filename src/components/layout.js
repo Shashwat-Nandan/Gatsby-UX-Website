@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 import {
   container,
@@ -11,10 +11,19 @@ import {
 } from "./layout.module.css";
 
 const Layout = ({ pageTitle, children }) => {
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     site {
+  //       siteMetaData {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `);
   return (
     <main className={container}>
       <title>{pageTitle}</title>
-      <h1>Shashwat Nandan</h1>
+      {/* <h1>{data.site.siteMetaData.title}</h1> */}
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -41,9 +50,9 @@ const Layout = ({ pageTitle, children }) => {
       </nav>
       <h1 className={heading}>{pageTitle}</h1>
       {children}
-      <div className={footer}>
-        Copyright All rights reserved Shashwat Nandan
-      </div>
+      <footer className={footer}>
+        Copyright All rights reserved by Shashwat Nandan
+      </footer>
     </main>
   );
 };
