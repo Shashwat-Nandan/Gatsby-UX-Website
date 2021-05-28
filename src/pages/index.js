@@ -2,12 +2,12 @@ import * as React from "react";
 import { graphql, Link as GatsbyLink } from "gatsby";
 import { Box, Heading, Link } from "theme-ui";
 
-import { Layout } from "../components/layout";
+// import { Layout } from "../components/layout";
 
 export default function IndexPage({ data }) {
   return (
-    <Layout>
-      {data.allMdx.nodes.map(({ id, excerpt, frontmatter, slug }) => {
+    <>
+      {data.allMdx.nodes.map(({ id, excerpt, frontmatter, slug }) => (
         <Box
           key={id}
           as="article"
@@ -28,15 +28,15 @@ export default function IndexPage({ data }) {
               {excerpt}
             </Box>
           </Link>
-        </Box>;
-      })}
-    </Layout>
+        </Box>
+      ))}
+    </>
   );
 }
 
 export const query = graphql`
   query SITE_INDEX_QUERY {
-    allMdx(sort: { fields: [frontmatter__date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         id
         excerpt(pruneLength: 250)
