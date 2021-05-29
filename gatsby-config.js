@@ -1,6 +1,12 @@
 const siteMetadata = {
   title: `Shashwat Nandan`,
   description: `This is my coding blog`,
+  lastBuildDate: new Date(Date.now()).toISOString(),
+  siteUrl: "https://shashwatnandan.com",
+  authorName: "Shashwat Nandan",
+  twitterUsername: "@nandan.shashwat",
+  siteLanguage: "en-US",
+  siteLocale: "en_us",
 };
 
 module.exports = {
@@ -8,7 +14,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
-
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-theme-ui",
 
     "gatsby-plugin-sharp",

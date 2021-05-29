@@ -7,6 +7,12 @@ export const useSiteMetadata = () => {
         siteMetadata {
           title
           description
+          lastBuildDate
+          siteUrl
+          authorName
+          twitterUsername
+          siteLanguage
+          siteLocale
         }
       }
     }

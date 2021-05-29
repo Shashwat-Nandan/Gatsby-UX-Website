@@ -1,16 +1,42 @@
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
+import SEO from "react-seo-component";
 import { Box } from "theme-ui";
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
 export default function PostPage({ data }) {
   const {
     body,
-    frontmatter: { title },
+    slug,
+    excerpt,
+    frontmatter: { title, date },
   } = data.mdx;
+
+  const {
+    title: siteTitle,
+    siteUrl,
+    siteLanguage,
+    siteLocale,
+    twitterUsername,
+    authorName,
+  } = useSiteMetadata();
 
   return (
     <>
+      <SEO
+        title={title}
+        titleTemplate={siteTitle}
+        description={excerpt}
+        pathname={`${siteUrl}${slug}`}
+        article={true}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+        twitterUsername={twitterUsername}
+        author={authorName}
+        datePublished={date}
+        dateModified={new Date(Date.now()).toISOString()}
+      />
       <Box as="h1" variant="styles.h1" fontSize="4xl">
         {title}
       </Box>
@@ -25,6 +51,7 @@ export const query = graphql`
       id
       slug
       body
+      excerpt
       frontmatter {
         date
         title
