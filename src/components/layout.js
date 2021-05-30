@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "theme-ui";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
 import { Header } from "./header";
+import { Footer } from "./footer";
 
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -18,6 +19,7 @@ export const Layout = ({ children }) => {
       >
         <Box as="main">{children}</Box>
       </Box>
+      <Footer />
     </>
   );
 };
